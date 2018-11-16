@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="Population">Population:</label>
-        <input class="form-control" asp-for="Population" />
+        <input class="form-control" asp-for="Population" asp-format="{0:#,###}"/>
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
     <a class="btn btn-secondary" href="/Home/Index">Cancel</a>
