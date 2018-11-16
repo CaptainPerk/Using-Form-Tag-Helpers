@@ -8,7 +8,13 @@
     </div>
     <div class="form-group">
         <label asp-for="Country"></label>
-        <input class="form-control" asp-for="Country" />
+        <select class="form-control" asp-for="Country">
+            <option disabled selected value="">Select a Country</option>
+            <option>England</option>
+            <option>USA</option>
+            <option>France</option>
+            <option>China</option>
+        </select>
     </div>
     <div class="form-group">
         <label asp-for="Population"></label>
