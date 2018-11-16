@@ -1,6 +1,7 @@
 ﻿using Cities.Models;
 using Cities.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Cities.Controllers
 {
@@ -14,6 +15,8 @@ namespace Cities.Controllers
         }
 
         public ViewResult Index() => View(_cityRepository.Cities);
+
+        public ViewResult Edit() => View("Create", _cityRepository.Cities.First());
 
         public ViewResult Create() => View();
 
