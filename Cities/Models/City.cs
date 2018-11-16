@@ -4,6 +4,7 @@ namespace Cities.Models
 {
     public class City
     {
+        [Display(Name = "City")]
         public string Name { get; set; }
         public string Country { get; set; }
         [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
