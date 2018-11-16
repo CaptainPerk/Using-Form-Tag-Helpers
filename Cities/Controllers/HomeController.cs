@@ -1,6 +1,7 @@
 ﻿using Cities.Models;
 using Cities.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
 
 namespace Cities.Controllers
@@ -16,9 +17,17 @@ namespace Cities.Controllers
 
         public ViewResult Index() => View(_cityRepository.Cities);
 
-        public ViewResult Edit() => View("Create", _cityRepository.Cities.First());
+        public ViewResult Edit()
+        {
+            ViewBag.Countries = new SelectList(_cityRepository.Cities.Select(c => c.Country).Distinct());
+            return View("Create", _cityRepository.Cities.First());
+        }
 
-        public ViewResult Create() => View();
+        public ViewResult Create()
+        {
+            ViewBag.Countries = new SelectList(_cityRepository.Cities.Select(c => c.Country).Distinct());
+            return View();
+        } 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
