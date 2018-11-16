@@ -9,5 +9,6 @@ namespace Cities.Models
         public string Country { get; set; }
         [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
         public int? Population { get; set; }
+        public string Notes { get; set; }
     }
 }
